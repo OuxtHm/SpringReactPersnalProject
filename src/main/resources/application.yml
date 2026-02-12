@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:XE
+    username: hr
+    password: happy   
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  jpa:
+    database: oracle
+    properties: 
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        storage_engine: innodb
+        show_sql: true
+        format_sql: true
+        user_sql_comments: true
+  thymeleaf: 
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:templates/
+    mode: HTML
+    suffix: .html
+
+logging:
+    level:
+        org.hibernate.SQL: DEBUG
+        org.hibernate.orm.jdbc.bind : TRACE
