@@ -1,18 +1,22 @@
 spring:
   datasource:
-    url: jdbc:oracle:thin:@localhost:1521:XE
-    username: ouxthm
-    password: 3546  
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:mysql://localhost:3306/compose_menus?serverTimezone=Asia/Seoul&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: '1234'
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
   jpa:
-    database: oracle
+    database: mysql
+    hibernate:
+      ddl-auto: update
     properties: 
       hibernate:
-        dialect: org.hibernate.dialect.OracleDialect
+        dialect: org.hibernate.dialect.MySQLDialect
         storage_engine: innodb
         show_sql: true
         format_sql: true
         user_sql_comments: true
+  
   thymeleaf: 
     cache: false
     encoding: UTF-8
@@ -21,6 +25,6 @@ spring:
     suffix: .html
 
 logging:
-    level:
-        org.hibernate.SQL: DEBUG
-        org.hibernate.orm.jdbc.bind : TRACE
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE
