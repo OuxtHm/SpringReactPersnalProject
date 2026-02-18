@@ -16,7 +16,6 @@ public interface CoffeeRepository extends JpaRepository<CoffeeEntity, Integer>{
             + "LIMIT 9", nativeQuery = true) 
     public List<CoffeeDTO.main> main_list();
     
-    // 2. menuListData: OFFSET/FETCH 구문을 LIMIT [시작위치], [갯수]로 변경
     @Query(value = "SELECT id, menu_name as menuname, image_url as image, category_name as category "
             + "FROM compose_menus "
             + "ORDER BY id ASC "
